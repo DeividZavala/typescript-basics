@@ -387,3 +387,25 @@ interface Dynamic {
 let dynamic: Dynamic = {};
 
 dynamic["someProp"] = "someValue";
+
+/********************
+ CLASSES, PROPERTIES AND INHERITANCE
+ *******************/
+
+/***
+ * Understanding classes and constructors
+ ***/
+// Las clases en typescript son practicamente lo mismo que en ES6
+class SomeClass {
+  // le indicamos a typescript como debe lucir la clase
+  property: string;
+  items: string[];
+  constructor(property: string, items = []) {
+    this.property = property;
+    this.items = items;
+  }
+
+  getProperty(item: string) {
+    this.items.push(item);
+  }
+}
