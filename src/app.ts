@@ -281,3 +281,30 @@ function getTacoName(obj: string): string {
   // es de tipo 'Taco'
   return (JSON.parse(obj) as Taco).name;
 }
+
+/********************
+ DIVING IN TO INTERFACES
+ *******************/
+
+/***
+ * Creating interfaces
+ ***/
+
+// Una interface es un type más poderoso y más adecuando para
+// estructuras de datos más complejas
+
+interface Quesadilla {
+  price: number;
+  large: number;
+}
+
+let quesadilla: Quesadilla;
+
+function createQuesadilla(price: number, large: number) {
+  return {
+    price,
+    large
+  };
+}
+
+quesadilla = createQuesadilla(14, 20);
