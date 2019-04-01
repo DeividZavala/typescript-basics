@@ -243,11 +243,18 @@ let data: [string, number, boolean] = ["red", 20, true];
  TYPE ALIASES AND ASSERTIONS
  *******************/
 
+/***
+ * Type Aliases
+ ***/
+
 // Puedes generar un alias para los types si es que lo necesitas para hacer
 // tu código más fácil de leer
 
 type Colors = "red" | "blue" | "white" | "black";
 type Callback = (color: Colors) => void;
+
+// Los alias o custom types pueden ser exportados para usarlos en cualquier
+// parte de la aplicación
 
 let carColor: Colors = "red";
 const selectColor: Callback = c => {
@@ -255,3 +262,22 @@ const selectColor: Callback = c => {
 };
 
 selectColor("blue");
+
+/***
+ * Type Assestions
+ ***/
+
+// Es una forma de decirle al transpilador que sabemos más del tipo de dato
+// que estamos manejando de lo que el transpilador puede
+
+type Taco = { name: string; cost: number; withAll: boolean };
+
+const taco: Taco = { name: "Pastor", cost: 15, withAll: true };
+
+const serialized = JSON.stringify(taco);
+
+function getTacoName(obj: string): string {
+  // le decimos a typescriop que el resultado de esta operación
+  // es de tipo 'Taco'
+  return (JSON.parse(obj) as Taco).name;
+}
