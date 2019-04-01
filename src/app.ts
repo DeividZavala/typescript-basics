@@ -231,3 +231,10 @@ sizes = ["small", "medium", "large"];
 // con el contructor
 // Generics --> Comunies en librerias de terceros
 let cars: Array<string> = ["versa", "golf", "vento"];
+
+/***
+ * Tuple Types for Arrays
+ ***/
+// cuando queremos decirle a typescript como es que se tiene que ver un arreglo
+// le pasamos los tipos de dato dentro de los corchetes (importa el orden)
+let data: [string, number, boolean] = ["red", 20, true];
