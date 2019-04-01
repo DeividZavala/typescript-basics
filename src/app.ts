@@ -370,3 +370,20 @@ interface example {
   someAttribute?: string; // este es opcional
   otherAttribute: number; // este es necesario
 }
+
+/***
+ * Interfaces with index signatures
+ ***/
+
+// Si queremos darle a una interfaz la capacidad de saber que nuetro objeto
+// tendra popiedades dinamicas es necesario indicarlo de la siguiente manera
+
+interface Dynamic {
+  // Estamos diciendo que tendremos una llave de tipo string y le asignaremos un valor
+  // de tipo string de igual forma
+  [key: string]: string;
+}
+
+let dynamic: Dynamic = {};
+
+dynamic["someProp"] = "someValue";
