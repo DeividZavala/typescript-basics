@@ -141,3 +141,22 @@ function toggleActivate(): void {
 }
 
 console.log(activated);
+
+/***
+ * Union and Literal Types
+ ***/
+
+// Permiten indicarles a typescript los posibles tipos de datos o valores
+// para una variable en especifico
+
+let pizzaSize: string = "small";
+
+function selectSize(size: "small" | "medium" | "large"): void {
+  pizzaSize = size;
+}
+
+// Si coloco un valor distinto a los posibles typescript me señala el error
+// selectSize("mediumm")
+
+selectSize("medium");
+console.log(`El tamao de la pizza es ${pizzaSize}`);
