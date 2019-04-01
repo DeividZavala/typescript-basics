@@ -219,3 +219,15 @@ car = {
     return "engine sound";
   }
 };
+
+/***
+ * Array Types and Generics
+ ***/
+
+// Hay 2 formas de declarar arreglos... de forma primitiva '[]'
+let sizes: string[];
+sizes = ["small", "medium", "large"];
+
+// con el contructor
+// Generics --> Comunies en librerias de terceros
+let cars: Array<string> = ["versa", "golf", "vento"];
