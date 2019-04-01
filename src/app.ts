@@ -358,3 +358,15 @@ let panzer: Dog = {
     return this.sound;
   }
 };
+
+/***
+ * Interfaces and optional properties
+ ***/
+
+// Si queremos marcar algun atributo como opcional en nuestra interface
+// solo es necesario marcarla con el signo de interrogación
+
+interface example {
+  someAttribute?: string; // este es opcional
+  otherAttribute: number; // este es necesario
+}
