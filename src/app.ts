@@ -238,3 +238,20 @@ let cars: Array<string> = ["versa", "golf", "vento"];
 // cuando queremos decirle a typescript como es que se tiene que ver un arreglo
 // le pasamos los tipos de dato dentro de los corchetes (importa el orden)
 let data: [string, number, boolean] = ["red", 20, true];
+
+/********************
+ TYPE ALIASES AND ASSERTIONS
+ *******************/
+
+// Puedes generar un alias para los types si es que lo necesitas para hacer
+// tu código más fácil de leer
+
+type Colors = "red" | "blue" | "white" | "black";
+type Callback = (color: Colors) => void;
+
+let carColor: Colors = "red";
+const selectColor: Callback = c => {
+  carColor = c;
+};
+
+selectColor("blue");
