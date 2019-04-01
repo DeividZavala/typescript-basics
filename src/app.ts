@@ -188,3 +188,13 @@ console.log(`Total: ${sum}`);
 // solo hay que agregar el signo de interrogación al argumento
 // que queremos marcar como opcional
 let sumOrder2: (price: number, quantity?: number) => number;
+
+/***
+ * Typed functions and default params
+ ***/
+
+// Si queremos asignar valores por defecto a una función si es que el valor no llega
+// lo podemos hacer como lo hariamos en javascrit con ES6
+sumOrder2 = (price, quantity = 1) => {
+  return price * quantity;
+};
