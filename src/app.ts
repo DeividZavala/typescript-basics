@@ -160,3 +160,22 @@ function selectSize(size: "small" | "medium" | "large"): void {
 
 selectSize("medium");
 console.log(`El tamao de la pizza es ${pizzaSize}`);
+
+/***
+ * Function Types
+ ***/
+
+// Podemos decirle a typescript si queremos que una variable sea una función
+// let sumOrder: Function;
+
+// También podemos ir más allá y decirle que es lo que la función tiene
+// que recibir y también decirle que tiene que regresar
+let sumOrder: (price: number, quantity: number) => number;
+// Al hacer esto podemos precindir de los tipos de dato en la asignación
+sumOrder = (price, quantity) => {
+  return price * quantity;
+};
+
+let total = sumOrder(25, 2);
+
+console.log(`Total: ${sum}`);
