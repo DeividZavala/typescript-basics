@@ -332,3 +332,29 @@ function createQuesadillaa(price: number, sizes: number[]): Quesadillaa {
 }
 
 quesadillaa = createQuesadillaa(14, [20, 30, 40]);
+
+/***
+ * Extending interfaces
+ ***/
+
+// Si queremos extender interfaces basta con usar la palabra extends como lo
+// hariamos con clases en ES6
+
+interface Animal {
+  sound: string;
+  playSound(): string;
+}
+
+interface Dog extends Animal {
+  name: string;
+  age: number;
+}
+
+let panzer: Dog = {
+  name: "panzer",
+  age: 7,
+  sound: "guof",
+  playSound() {
+    return this.sound;
+  }
+};
