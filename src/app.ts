@@ -179,3 +179,12 @@ sumOrder = (price, quantity) => {
 let total = sumOrder(25, 2);
 
 console.log(`Total: ${sum}`);
+
+/***
+ * Function and optional arguments
+ ***/
+
+// Si queremos que una función tenga parametros opcioneales en typescript...
+// solo hay que agregar el signo de interrogación al argumento
+// que queremos marcar como opcional
+let sumOrder2: (price: number, quantity?: number) => number;
