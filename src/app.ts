@@ -198,3 +198,24 @@ let sumOrder2: (price: number, quantity?: number) => number;
 sumOrder2 = (price, quantity = 1) => {
   return price * quantity;
 };
+
+/***
+ * Object Types
+ ***/
+
+// Describimos como es que se tiene que ver el objeto
+let car: {
+  name: string;
+  color: string;
+  capacity: number;
+  turnOnEngine(): string;
+};
+
+car = {
+  name: "Versa",
+  color: "red",
+  capacity: 50,
+  turnOnEngine() {
+    return "engine sound";
+  }
+};
