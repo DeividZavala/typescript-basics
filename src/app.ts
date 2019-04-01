@@ -283,7 +283,7 @@ function getTacoName(obj: string): string {
 }
 
 /********************
- DIVING IN TO INTERFACES
+ DIVING INTO INTERFACES
  *******************/
 
 /***
@@ -308,3 +308,27 @@ function createQuesadilla(price: number, large: number) {
 }
 
 quesadilla = createQuesadilla(14, 20);
+
+/***
+ * Interfaces with function types
+ ***/
+
+interface Quesadillaa {
+  price: number;
+  sizes: number[];
+  getSizes(): number[];
+}
+
+let quesadillaa: Quesadillaa;
+
+function createQuesadillaa(price: number, sizes: number[]): Quesadillaa {
+  return {
+    price,
+    sizes,
+    getSizes() {
+      return this.sizes;
+    }
+  };
+}
+
+quesadillaa = createQuesadillaa(14, [20, 30, 40]);
