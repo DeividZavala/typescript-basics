@@ -409,3 +409,25 @@ class SomeClass {
     this.items.push(item);
   }
 }
+
+/***
+ * Public and private members
+ ***/
+
+// En typescript tenemos la posibilidad de implementar métodos y propiedades
+// publicas y privadas, cosa que no existe en javascript
+
+class PublicAndPriateMembers {
+  public items: string[] = [];
+  // De esta manera typescript genera la propiedad como privada y la asigan... es decir
+  // crea this.name = name
+  constructor(private name: string) {}
+}
+
+const l = new PublicAndPriateMembers("test");
+// si intento acceder a name typescript me manda un error
+/* 
+    NOTA: Al moment de transpilar a javascript, ya es posible acceder ya que no existen los
+    tipos privados
+*/
+//console.log(l.name);
