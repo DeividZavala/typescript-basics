@@ -446,3 +446,37 @@ console.log(read.name);
 // al ser una propiedad solamente de lectura... si quiero reasignarle un valor
 // typescript me mandará un error
 // read.name = "other value"
+
+/***
+ * Setters and Getters members (Accessors)
+ ***/
+
+// Los setter y getter son una forma de interceptar y manipular los procesos de acceder
+// asignar los valores de un atributo de nuestras instancias.
+// es el equivalente a lo sigueinte:
+
+/*
+
+ let instace = new Class("someValue")
+
+ // invoca un setter
+ instance.someAttribute = "otherValue"
+
+ // invoca un getter
+console.log(instance.someAttribute)
+
+ */
+class SettersAndGetters {
+  constructor(public sizes: string[]) {}
+
+  get availableSizes() {
+    return this.sizes;
+  }
+
+  set availableSizes(sizes: string[]) {
+    this.sizes = sizes;
+  }
+}
+
+// la ventaja de usar los setter y getter es que podemos tratar la información que recibimos
+// o que se solicita
