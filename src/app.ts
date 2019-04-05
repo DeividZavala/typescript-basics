@@ -480,3 +480,20 @@ class SettersAndGetters {
 
 // la ventaja de usar los setter y getter es que podemos tratar la información que recibimos
 // o que se solicita
+
+/***
+ * Class Inheritance
+ ***/
+
+// Para la herencia de clases en typescript basta con usar la palabra reservada extends
+// como lo hariamos en ES6
+
+class Animal {
+  constructor(public specie: string, public sound: string) {}
+}
+
+class Dog extends Animal {
+  constructor(public name: string, specie: string, sound: string) {
+    super(specie, sound);
+  }
+}
