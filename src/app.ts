@@ -488,11 +488,11 @@ class SettersAndGetters {
 // Para la herencia de clases en typescript basta con usar la palabra reservada extends
 // como lo hariamos en ES6
 
-class Animal {
+class Animall {
   constructor(public specie: string, public sound: string) {}
 }
 
-class Dog extends Animal {
+class Cat extends Animall {
   constructor(public name: string, specie: string, sound: string) {
     super(specie, sound);
   }
@@ -535,3 +535,63 @@ class ExtFromProtected extends ProtectedMember {
 
 let ext = new ExtFromProtected("david");
 console.log(ext);
+
+/***
+ * Interface contracts with "Implements"
+ ***/
+
+// al igual que en las clases, podemos decirle al transpilador de typescript incluso si es que una clase
+// heredará de otra mediante las interfaces... de igual forma que a las clases en las interfaces también
+// podemos usar la palabra extends
+
+// y para indicarle a typescript que una clase debe de obedecer una interface tenemos que usar
+// la palabra 'implements'
+
+interface SizesInterface {
+  availableSizes: string[];
+}
+
+abstract class Sizes implements SizesInterface {
+  constructor(protected sizes: string[]) {}
+
+  set availableSizes(sizes: string[]) {
+    this.sizes = sizes;
+  }
+
+  get availableSizes() {
+    return this.sizes;
+  }
+}
+
+// la interfaz PizzaInterface esta herendando de la interfaz SizesInterface
+interface PizzaInterface extends SizesInterface {
+  readonly name: string;
+  toppings: string[];
+  updateSizes(sizes: string[]): void;
+  addTopping(topping: string): void;
+}
+
+// la clase Pizza tiene que complir con las especificaciones de PizzaInterface
+class Pizza extends Sizes implements PizzaInterface {
+  public toppings: string[] = [];
+
+  constructor(readonly name: string, sizes: string[]) {
+    super(sizes);
+  }
+
+  public updateSizes(sizes: string[]) {
+    this.sizes = sizes;
+  }
+
+  public addTopping(topping: string) {
+    this.toppings.push(topping);
+  }
+}
+
+const pizzaa = new Pizza("Pepperoni", ["small", "medium"]);
+
+console.log(pizzaa.availableSizes);
+
+pizzaa.updateSizes(["large"]);
+
+console.log(pizzaa.availableSizes);
