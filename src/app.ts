@@ -595,3 +595,24 @@ console.log(pizzaa.availableSizes);
 pizzaa.updateSizes(["large"]);
 
 console.log(pizzaa.availableSizes);
+
+/***
+ * Static properties and methods
+ ***/
+
+// Ejemplo:
+
+// const date = Date.now()
+
+// las propiedades y métodos estaticos nos sirven para poder acceder a ellos sin tener que crear
+// una instancia de determinada clase, simplemente los usamos a partir de la clase.
+
+class Coupon {
+  static allowed = ["Pepperoni", "Hawuaiana", "Mexicana"];
+  static create(percentage: number) {
+    return `PIZZA_RESTAURANT_${percentage}`;
+  }
+}
+
+// Usando el método estatico de la clase Coupon
+console.log(Coupon.create(25));
