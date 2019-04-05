@@ -497,3 +497,16 @@ class Dog extends Animal {
     super(specie, sound);
   }
 }
+
+/***
+ * Abstract Classes
+ ***/
+
+// Las clases abstractas son clases de las cuales no vamos a poder generar instancias
+// son clases que únicamente nos van a servir para poder heredar de ellas
+
+// para declarar una clase abtracta en typescript.. solo necesito usar la palabra reservada 'abstract'
+
+abstract class AnotherClass {
+  constructor(someProp: string, otherProp: string) {}
+}
