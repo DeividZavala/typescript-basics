@@ -510,3 +510,28 @@ class Dog extends Animal {
 abstract class AnotherClass {
   constructor(someProp: string, otherProp: string) {}
 }
+
+/***
+ * Protected members and Inheritance
+ ***/
+
+// Los miembros protegidos son propiedades privadas en una clase padre que van a poder ser accesibles
+// para las clases que hereden de ella pero con la particularidad de que no podemos esencialmente
+// mutarlas o tener acceso a ellas para fines particulares.
+
+class ProtectedMember {
+  constructor(protected someProp: string) {}
+}
+
+class ExtFromProtected extends ProtectedMember {
+  constructor(public prop: string) {
+    super(prop);
+  }
+
+  public updateName(name: string) {
+    this.someProp = name;
+  }
+}
+
+let ext = new ExtFromProtected("david");
+console.log(ext);
